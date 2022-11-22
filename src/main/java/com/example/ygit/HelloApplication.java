@@ -21,8 +21,9 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws GitAPIException {
-       launch();
-       GitCommand test = new GitCommand("https://github.com/YassineKADER/CvGenerator.git","/home/mpower/Documents/test");
-       test.clonerepository();
+       //launch();
+        Ygit test = new Ygit("/home/mpower/Documents/cv-generator");
+
+        System.out.println(Ygit.getOrigineURLRepo(test.getgit()));
     }
 }
