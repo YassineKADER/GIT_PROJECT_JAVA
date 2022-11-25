@@ -7,6 +7,6 @@
 <?import javafx.scene.layout.*?>
 
 <Pane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.ygit.Logs">
+            xmlns:fx="http://javafx.com/fxml">
 
 </Pane>
