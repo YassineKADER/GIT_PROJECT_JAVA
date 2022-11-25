@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.HelloController">
    <left>
-      <Pane prefHeight="550.0" prefWidth="232.0" style="-fx-background-color: #0934b3;" BorderPane.alignment="CENTER">
-         <VBox layoutY="140.0" prefHeight="293.0" prefWidth="232.0">
-            <JFXButton prefHeight="59.0" prefWidth="200.0" text="Chose directory" textAlignment="CENTER" textFill="WHITE">
+      <Pane prefHeight="550.0" prefWidth="256.0" style="-fx-background-color: #0934b3;" BorderPane.alignment="CENTER">
+         <VBox layoutY="127.0" prefHeight="331.0" prefWidth="256.0">
+            <JFXButton alignment="BASELINE_LEFT" onAction="#Home" prefHeight="66.0" prefWidth="256.0" text="Chose directory" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font name="Verdana" size="21.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="59.0" prefWidth="200.0" text="Clone" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" onAction="#Logs" prefHeight="68.0" prefWidth="267.0" text="Logs" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton prefHeight="59.0" prefWidth="200.0" text="Logs" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font name="Verdana" size="21.0" />
                </font></JFXButton>
-            <JFXButton prefHeight="59.0" prefWidth="200.0" text="Branches" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" prefHeight="69.0" prefWidth="305.0" text="Branches" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font name="Verdana" size="21.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="59.0" prefWidth="200.0" text="Status" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" prefHeight="71.0" prefWidth="356.0" text="Status" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font name="Verdana" size="21.0" />
                </font>
             </JFXButton>
-            <JFXButton prefHeight="59.0" prefWidth="200.0" text="SnapShots" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" prefHeight="72.0" prefWidth="445.0" text="SnapShots" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font name="Verdana" size="21.0" />
                </font>
             </JFXButton>
          </VBox>
-         <Label layoutX="17.0" layoutY="28.0" prefHeight="49.0" prefWidth="167.0" text="Logo" textAlignment="CENTER" textFill="WHITE">
+         <Label layoutX="11.0" layoutY="27.0" prefHeight="49.0" prefWidth="27.0" rotate="90.0" text="llll" textAlignment="CENTER" textFill="WHITE">
             <font>
                <Font name="Arial" size="29.0" />
             </font>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
          </Label>
       </Pane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane fx:id="contentArea" prefHeight="550.0" prefWidth="595.0" />
+         </children></AnchorPane>
    </center>
 </BorderPane>

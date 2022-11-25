@@ -1,14 +1,17 @@
 package com.example.ygit;
 
+import javafx.scene.control.skin.SliderSkin;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ListBranchCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRemoteException;
 import org.eclipse.jgit.api.errors.TransportException;
+import org.eclipse.jgit.lib.Ref;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -63,10 +66,15 @@ public class Ygit {
     }
 
     public static List getallbranches(Git git) throws GitAPIException {
-
-        //TODO complete the method
-        ListBranchCommand bracnhlist= (ListBranchCommand) git.branchList().call();
-        return new LinkedList();
+        ArrayList<String> returndeList = new ArrayList<String>();
+        try{
+            List<Ref> branches = git.branchList().setListMode(ListBranchCommand.ListMode.ALL).call();
+            branches.forEach(ref -> returndeList.add(ref.getName().toString()));
+        }
+        catch (Exception e){
+            System.out.println("no branch");
+        }
+        return returndeList ;
     }
 
 }
