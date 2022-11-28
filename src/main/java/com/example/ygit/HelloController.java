@@ -13,13 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HelloController{
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 
     @FXML
     private TreeView explorer;

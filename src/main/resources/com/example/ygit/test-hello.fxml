@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -52,10 +51,11 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <StackPane fx:id="contentArea" prefHeight="550.0" prefWidth="595.0" style="-fx-background-color: gray;">
+            <Pane layoutX="-1.0" prefHeight="551.0" prefWidth="596.0">
                <children>
-                  <JFXButton prefHeight="0.0" prefWidth="62.0" text="Button" textFill="WHITE" StackPane.alignment="TOP_CENTER" />
-               </children></StackPane>
+                  <JFXButton layoutX="225.0" layoutY="26.0" text="Chose a directory" textFill="WHITE" />
+               </children>
+            </Pane>
          </children></AnchorPane>
    </center>
 </BorderPane>
