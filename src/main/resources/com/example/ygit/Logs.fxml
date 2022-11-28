@@ -9,5 +9,13 @@
 <Pane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.ygit.Logs">
+    <children>
+        <TableView prefHeight="200.0" prefWidth="597.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="Id " />
+                <TableColumn fx:id="commit" prefWidth="75.0" text="commit" />
+            </columns>
+        </TableView>
+    </children>
 
 </Pane>
