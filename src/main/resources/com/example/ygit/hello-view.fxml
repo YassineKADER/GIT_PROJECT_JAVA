@@ -52,10 +52,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <StackPane fx:id="contentArea" prefHeight="550.0" prefWidth="595.0" style="-fx-background-color: gray;">
-               <children>
-                  <JFXButton prefHeight="0.0" prefWidth="62.0" text="Button" textFill="WHITE" StackPane.alignment="TOP_CENTER" />
-               </children></StackPane>
+            <StackPane fx:id="contentArea" prefHeight="550.0" prefWidth="595.0" style="-fx-background-color: gray;" />
          </children></AnchorPane>
    </center>
 </BorderPane>

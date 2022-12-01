@@ -21,11 +21,12 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws GitAPIException {
-        launch();
-        //Ygit test = new Ygit("/home/mpower/Documents/firebase");
+        //launch();
+        Ygit test = new Ygit("/home/mpower/Documents/cv-generator");
         //test.cloneRepoAllBranche("https://github.com/iamshaunjp/Getting-Started-with-Firebase-9.git");
 
         //System.out.println(Ygit.getOrigineURLRepo(test.getgit()));
+        test.getLogs();
 
         //Ygit.getallbranches(test.getgit()).forEach(o -> System.out.println(o));
     }

@@ -7,11 +7,13 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRemoteException;
 import org.eclipse.jgit.api.errors.TransportException;
 import org.eclipse.jgit.lib.Ref;
+import org.eclipse.jgit.revwalk.RevCommit;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -75,6 +77,16 @@ public class Ygit {
             System.out.println("no branch");
         }
         return returndeList ;
+    }
+
+    public List getLogs() throws GitAPIException {
+        Iterable<RevCommit> log = this.git.log().call();
+        ArrayList<String> returnedList = new ArrayList<String>();
+        for(Iterator<RevCommit> iterator = log.iterator(); iterator.hasNext();){
+            RevCommit rev = iterator.next();
+            System.out.println("email adress:"+rev.getAuthorIdent().getEmailAddress()+"\nname:"+rev.getAuthorIdent().getName()+"\n commit message:"+rev.getFullMessage()+" \n time:"+rev.getAuthorIdent().getWhen());
+        }
+        return returnedList;
     }
 
 }
