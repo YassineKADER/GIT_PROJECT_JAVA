@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
 
-<Pane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.ygit.Logs">
+<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.Logs">
     <children>
-        <TableView fx:id="loglist" layoutX="12.0" layoutY="49.0" prefHeight="300.0" prefWidth="573.0">
+        <TableView fx:id="loglist" layoutX="12.0" layoutY="49.0" onMouseClicked="#getItem" prefHeight="300.0" prefWidth="573.0">
             <columns>
                 <TableColumn fx:id="date" prefWidth="128.0" text="Date" />
                 <TableColumn fx:id="author" prefWidth="78.0" text="Author" />
                 <TableColumn fx:id="description" prefWidth="366.0" text="Description" />
             </columns>
         </TableView>
-        <TextArea layoutX="15.0" layoutY="363.0" prefHeight="158.0" prefWidth="567.0" />
+        <TextArea fx:id="infos" layoutX="15.0" layoutY="363.0" prefHeight="158.0" prefWidth="567.0" />
     </children>
 
 </Pane>

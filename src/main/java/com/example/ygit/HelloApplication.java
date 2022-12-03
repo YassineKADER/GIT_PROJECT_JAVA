@@ -26,7 +26,7 @@ public class HelloApplication extends Application {
         //test.cloneRepoAllBranche("https://github.com/iamshaunjp/Getting-Started-with-Firebase-9.git");
 
         //System.out.println(Ygit.getOrigineURLRepo(test.getgit()));
-        test.getLogs();
+        System.out.println(test.getLogs().size());;
 
         //Ygit.getallbranches(test.getgit()).forEach(o -> System.out.println(o));
     }

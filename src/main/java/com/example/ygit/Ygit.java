@@ -85,6 +85,7 @@ public class Ygit {
             item.put("Date", rev.getAuthorIdent().getWhen().toString());
             item.put("Commit_id", rev.getId().getName());
             item.put("Message",rev.getFullMessage());
+            returnedList.add(item);
         }
         return returnedList;
     }
