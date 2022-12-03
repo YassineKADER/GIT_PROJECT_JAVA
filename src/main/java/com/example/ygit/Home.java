@@ -2,6 +2,7 @@ package com.example.ygit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -25,6 +26,7 @@ public class Home {
         if(file != null){
             Path directory = file.toPath();
             Ygit.Directory = directory;
+
             try{
 
                 TreeItem tr = new TreeItem<String>("test");

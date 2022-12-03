@@ -3,25 +3,44 @@ package com.example.ygit;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
+import javafx.stage.DirectoryChooser;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
-public class HelloController{
+public class HelloController implements Initializable {
 
-
-    @FXML
-    private TreeView explorer;
 
     @FXML
     private StackPane contentArea;
 
+    @FXML
+    public Button branches;
 
+    @FXML
+     private Button logs;
+
+    @FXML
+     private Button status;
+
+
+    public void enableButtons(){
+        branches.setDisable(false);
+        logs.setDisable(false);
+        status.setDisable(false);
+    }
+
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
             Parent fxml = FXMLLoader.load(getClass().getResource("Home.fxml"));
@@ -71,7 +90,6 @@ public class HelloController{
             e.printStackTrace();
         }
     }
-
 
    /* @FXML
     private void addelement(ActionEvent event){

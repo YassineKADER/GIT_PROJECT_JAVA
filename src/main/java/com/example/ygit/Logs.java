@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -33,6 +34,7 @@ public class Logs implements Initializable {
     ArrayList<HashMap<String, String>> log = null;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try{
             infos.setEditable(false);
             author.setCellValueFactory(new PropertyValueFactory<Commit, String>("author"));
             date.setCellValueFactory(new PropertyValueFactory<Commit, String>("date"));
@@ -51,8 +53,18 @@ public class Logs implements Initializable {
 
         ObservableList<Commit> list = FXCollections.observableArrayList(items);
 
-            loglist.setItems(list);
+            loglist.setItems(list);}
+        catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Please select a directory first");
+            alert.setTitle("Load Problem");
+            alert.showAndWait();
+
+        }
+
     }
+
+
 
     public void getItem(MouseEvent event){
         int index = loglist.getSelectionModel().getSelectedIndex();

@@ -19,16 +19,16 @@
                   <Font name="Verdana" size="21.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" onAction="#Logs" prefHeight="68.0" prefWidth="267.0" text="Logs" textFill="WHITE">
+            <JFXButton fx:id="logs" alignment="BASELINE_LEFT" onAction="#Logs" prefHeight="68.0" prefWidth="267.0" text="Logs" textFill="WHITE">
                <font>
                   <Font name="Verdana" size="21.0" />
                </font></JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" onAction="#Branches" prefHeight="69.0" prefWidth="305.0" text="Branches" textFill="WHITE">
+            <JFXButton fx:id="branches" alignment="BASELINE_LEFT" onAction="#Branches" prefHeight="69.0" prefWidth="305.0" text="Branches" textFill="WHITE">
                <font>
                   <Font name="Verdana" size="21.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" onAction="#Status" prefHeight="71.0" prefWidth="356.0" text="Status" textFill="WHITE">
+            <JFXButton fx:id="status" alignment="BASELINE_LEFT" onAction="#Status" prefHeight="71.0" prefWidth="356.0" text="Status" textFill="WHITE">
                <font>
                   <Font name="Verdana" size="21.0" />
                </font>
