@@ -23,17 +23,12 @@
                <font>
                   <Font name="Verdana" size="21.0" />
                </font></JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" prefHeight="69.0" prefWidth="305.0" text="Branches" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" onAction="#Branches" prefHeight="69.0" prefWidth="305.0" text="Branches" textFill="WHITE">
                <font>
                   <Font name="Verdana" size="21.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" prefHeight="71.0" prefWidth="356.0" text="Status" textFill="WHITE">
-               <font>
-                  <Font name="Verdana" size="21.0" />
-               </font>
-            </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" prefHeight="72.0" prefWidth="445.0" text="SnapShots" textFill="WHITE">
+            <JFXButton alignment="BASELINE_LEFT" onAction="#Status" prefHeight="71.0" prefWidth="356.0" text="Status" textFill="WHITE">
                <font>
                   <Font name="Verdana" size="21.0" />
                </font>

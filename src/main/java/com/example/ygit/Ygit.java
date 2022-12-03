@@ -12,13 +12,10 @@ import org.eclipse.jgit.revwalk.RevCommit;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Ygit {
-    private final Path Directory;
+    static public Path Directory;
     private Git git;
 
     public Ygit(String Directory) {
@@ -77,14 +74,17 @@ public class Ygit {
         return returndeList;
     }
 
-    public List getLogs() throws GitAPIException {
+    public  ArrayList<HashMap<String,String>> getLogs() throws GitAPIException {
         Iterable<RevCommit> log = this.git.log().call();
-        ArrayList<String> returnedList = new ArrayList<String>();
+        ArrayList<HashMap<String,String>> returnedList = new ArrayList<HashMap<String,String>>();
         for (Iterator<RevCommit> iterator = log.iterator(); iterator.hasNext(); ) {
+            HashMap<String, String> item = new HashMap<String, String>();
             RevCommit rev = iterator.next();
-            System.out.println("email adress:" + rev.getAuthorIdent().getEmailAddress() + "\nname:" + rev.getAuthorIdent().getName() + "\n commit message:" + rev.getFullMessage() + " \n time:" + rev.getAuthorIdent().getWhen());
-            System.out.println("commmit id"+rev.getId().getName());
-
+            item.put("Author", rev.getAuthorIdent().getName());
+            item.put("Email", rev.getAuthorIdent().getEmailAddress());
+            item.put("Date", rev.getAuthorIdent().getWhen().toString());
+            item.put("Commit_id", rev.getId().getName());
+            item.put("Message",rev.getFullMessage());
         }
         return returnedList;
     }

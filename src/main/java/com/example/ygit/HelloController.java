@@ -51,6 +51,28 @@ public class HelloController{
             e.printStackTrace();
         }
     }
+
+    public void Status(ActionEvent event){
+        try{
+            Parent fxml = FXMLLoader.load(getClass().getResource("Status.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void Branches(ActionEvent event){
+        try{
+            Parent fxml = FXMLLoader.load(getClass().getResource("Branches.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
    /* @FXML
     private void addelement(ActionEvent event){
         TreeItem<String> folder = new TreeItem<String>("something");

@@ -18,22 +18,13 @@ public class Home {
     @FXML
     private ListView explorer;
 
-    @FXML
-    private void addelement(ActionEvent event){
-        TreeItem<String> folder = new TreeItem<String>("something");
-        TreeItem<String> Folder3 = new TreeItem<String>("test5");
-
-        folder.getChildren().add(Folder3);
-
-        //explorer.setRoot(folder);
-    }
-
     public void choseFolder(ActionEvent envent){
         DirectoryChooser dct = new DirectoryChooser();
         dct.setInitialDirectory(Paths.get(System.getProperty("user.dir")).toFile());
         File file = dct.showDialog(null);
         if(file != null){
             Path directory = file.toPath();
+            Ygit.Directory = directory;
             try{
 
                 TreeItem tr = new TreeItem<String>("test");
