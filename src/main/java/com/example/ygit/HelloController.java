@@ -83,11 +83,20 @@ public class HelloController implements Initializable {
 
     public void Branches(ActionEvent event){
         try{
-            Parent fxml = FXMLLoader.load(getClass().getResource("Branches.fxml"));
-            contentArea.getChildren().removeAll();
-            contentArea.getChildren().setAll(fxml);
+            if(Ygit.Directory == null){
+                throw new IOException();
+            }
+            else{
+                Parent fxml = FXMLLoader.load(getClass().getResource("Branches.fxml"));
+                contentArea.getChildren().removeAll();
+                contentArea.getChildren().setAll(fxml);
+            }
+
         } catch (IOException e) {
-            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Please select a directory first");
+            alert.setTitle("Load Problem");
+            alert.showAndWait();
         }
     }
 

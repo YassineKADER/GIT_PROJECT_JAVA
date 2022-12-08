@@ -3,13 +3,16 @@ package com.example.ygit;
 import javafx.scene.control.skin.SliderSkin;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ListBranchCommand;
+import org.eclipse.jgit.api.Status;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRemoteException;
 import org.eclipse.jgit.api.errors.TransportException;
+import org.eclipse.jgit.lib.IndexDiff;
 import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.revwalk.RevCommit;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -32,10 +35,10 @@ public class Ygit {
     }
 
     @SuppressWarnings("static-access")
-    public void clonerepository(String repository) {
+    public static void clonerepository(String repository, File Directory) {
         try {
-            File file = this.Directory.toFile();
-            this.git = Git.cloneRepository().setURI(repository).setDirectory(this.Directory.toFile()).call();
+            File file = Directory;
+            Git git = Git.cloneRepository().setURI(repository).setDirectory(file).call();
         } catch (InvalidRemoteException e) {
             throw new RuntimeException(e);
         } catch (TransportException e) {
@@ -45,10 +48,23 @@ public class Ygit {
         }
     }
 
-    public void cloneRepoAllBranche(String reposotirylink) {
+    public static void deleteFiles(File dirPath) {
+        File filesList[] = dirPath.listFiles();
+        for (File file : filesList) {
+            if (file.isFile()) {
+                file.delete();
+                System.out.println("files deleted");
+            } else {
+
+                deleteFiles(file);
+            }
+        }
+    }
+
+    public static void cloneRepoAllBranche(String reposotirylink,File Directory) {
         try {
-            File file = this.Directory.toFile();
-            this.git = Git.cloneRepository().setURI(reposotirylink).setDirectory(this.Directory.toFile()).setCloneAllBranches(true).call();
+            File file = Directory;
+            Git git = Git.cloneRepository().setURI(reposotirylink).setDirectory(file).setCloneAllBranches(true).call();
         } catch (InvalidRemoteException e) {
             throw new RuntimeException(e);
         } catch (TransportException e) {
@@ -85,9 +101,15 @@ public class Ygit {
             item.put("Date", rev.getAuthorIdent().getWhen().toString());
             item.put("Commit_id", rev.getId().getName());
             item.put("Message",rev.getFullMessage());
+            
             returnedList.add(item);
         }
         return returnedList;
+    }
+
+    public void getstatus() throws IOException, GitAPIException {
+        Status test = this.git.status().call();
+        System.out.println(test.getModified() +" "+test.getModified());
     }
 
 }

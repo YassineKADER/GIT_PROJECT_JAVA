@@ -20,13 +20,14 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws GitAPIException {
-        launch();
-        Ygit test = new Ygit("/home/mpower/IdeaProjects/YGIT");
+    public static void main(String[] args) throws GitAPIException, IOException {
+        //launch();
+        Ygit test = new Ygit("/home/mpower/Documents/test-ygit/cloned-repo");
         //test.cloneRepoAllBranche("https://github.com/iamshaunjp/Getting-Started-with-Firebase-9.git");
 
         //System.out.println(Ygit.getOrigineURLRepo(test.getgit()));
         System.out.println(test.getLogs().size());;
+        test.getstatus();
 
         //Ygit.getallbranches(test.getgit()).forEach(o -> System.out.println(o));
     }
