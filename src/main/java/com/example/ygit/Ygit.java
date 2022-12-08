@@ -107,9 +107,27 @@ public class Ygit {
         return returnedList;
     }
 
-    public void getstatus() throws IOException, GitAPIException {
+    public String getstatus() throws IOException, GitAPIException {
         Status test = this.git.status().call();
         System.out.println(test.getModified() +" "+test.getModified());
+        String text = new String();
+        for(String element: test.getModified()){
+            text += "Modified:"+element.toString()+"\n";
+        }
+        for(String element: test.getChanged()){
+            text += "Changed:"+element.toString()+"\n";
+        }
+        for(String element: test.getRemoved()){
+            text += "Removed:"+element.toString()+"\n";
+        }
+        for(String element: test.getUntracked()){
+            text += "Untracked:"+element.toString()+"\n";
+        }
+        for(String element: test.getMissing()){
+            text += "Missed:"+element.toString()+"\n";
+        }
+
+        return text;
     }
 
 }

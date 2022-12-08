@@ -63,21 +63,36 @@ public class HelloController implements Initializable {
 
     public void Logs(ActionEvent event){
         try{
+            if(Ygit.Directory == null){
+                throw new IOException();
+            }
             Parent fxml = FXMLLoader.load(getClass().getResource("Logs.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
         } catch (IOException e) {
             e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Please select a directory first");
+            alert.setTitle("Load Problem");
+            alert.showAndWait();
         }
     }
 
     public void Status(ActionEvent event){
         try{
+            if(Ygit.Directory == null){
+                throw new IOException();
+            }
             Parent fxml = FXMLLoader.load(getClass().getResource("Status.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
         } catch (IOException e) {
             e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Please select a directory first");
+            alert.setTitle("Load Problem");
+            alert.showAndWait();
+
         }
     }
 

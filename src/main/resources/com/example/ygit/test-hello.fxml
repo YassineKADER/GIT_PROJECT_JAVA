@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -55,12 +56,14 @@
          <children>
             <Pane layoutX="-1.0" prefHeight="551.0" prefWidth="596.0">
                <children>
-                  <Text layoutX="15.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a git link repo:" />
+                  <Text layoutX="15.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
                   <Text layoutX="173.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="255.7294921875" />
-                  <TextArea layoutX="15.0" layoutY="49.0" prefHeight="267.0" prefWidth="571.0" />
-                  <TextArea layoutX="16.0" layoutY="353.0" prefHeight="111.0" prefWidth="570.0" />
+                  <TextArea fx:id="statu" layoutX="15.0" layoutY="49.0" prefHeight="267.0" prefWidth="268.0" />
+                  <TextArea fx:id="message" layoutX="16.0" layoutY="353.0" prefHeight="111.0" prefWidth="570.0" />
                   <JFXButton fx:id="commit" layoutX="451.0" layoutY="513.0" prefHeight="24.0" prefWidth="131.0" text="Commit" />
                   <Text layoutX="15.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commit Messgae:" />
+                  <JFXListView fx:id="branch" layoutX="301.0" layoutY="47.0" prefHeight="267.0" prefWidth="268.0" />
+                  <Text layoutX="310.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Branch List:" />
                </children>
             </Pane>
          </children></AnchorPane>

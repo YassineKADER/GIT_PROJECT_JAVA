@@ -21,7 +21,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws GitAPIException, IOException {
-        //launch();
+        launch();
         Ygit test = new Ygit("/home/mpower/Documents/test-ygit/cloned-repo");
         //test.cloneRepoAllBranche("https://github.com/iamshaunjp/Getting-Started-with-Firebase-9.git");
 
