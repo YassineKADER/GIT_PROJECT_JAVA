@@ -4,10 +4,9 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.Home">
+<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.Home" stylesheets="style.css">
     <children>
-        <JFXButton fx:id="directory_path" layoutX="225.0" layoutY="26.0" onAction="#choseFolder" prefHeight="0.0" text="Chose a directory" textFill="WHITE" />
-    <ListView fx:id="explorer" layoutX="28.0" layoutY="84.0" prefHeight="400.0" prefWidth="539.0" />
-    <JFXButton fx:id="scan" layoutX="517.0" layoutY="512.0" text="Scan" textFill="WHITE" />
+        <JFXButton fx:id="directory_path" layoutX="225.0" layoutY="26.0" onAction="#choseFolder" prefHeight="0.0" text="Chose a directory" textFill="WHITE" styleClass="btnsecondary"/>
+    <ListView fx:id="explorer" layoutX="28.0" layoutY="84.0" prefHeight="400.0" prefWidth="539.0" styleClass="list"/>
     </children>
 </Pane>

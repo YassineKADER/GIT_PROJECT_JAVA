@@ -54,6 +54,7 @@ public class Branches {
             alert.setContentText("Enter a valid git link or chose another folder");
             alert.setTitle("ERROR");
             alert.showAndWait();
+            return;
         }
 
     }

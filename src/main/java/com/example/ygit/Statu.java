@@ -28,6 +28,7 @@ public class Statu implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        statu.setEditable(false);
         Ygit test = new Ygit(Ygit.Directory.toString());
         try {
             statu.setText(test.getstatus());

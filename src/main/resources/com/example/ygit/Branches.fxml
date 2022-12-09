@@ -6,12 +6,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.Branches">
+<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.Branches" stylesheets="style.css">
 <children>
         <TextField fx:id="repourl" layoutX="63.0" layoutY="115.0" prefHeight="24.0" prefWidth="485.0" />
-        <Text layoutX="234.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a git link repo:" />
-        <JFXButton fx:id="clone" layoutX="278.0" layoutY="398.0" onAction="#clone" text="Clone" />
-        <Text layoutX="173.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="255.7294921875" />
-      <JFXCheckBox fx:id="allBracnhes" layoutX="232.0" layoutY="183.0" text="Clone All Bracnhes" />
+        <Text fill="WHITE" layoutX="234.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a git link repo:" />
+        <JFXButton fx:id="clone" layoutX="278.0" layoutY="398.0" onAction="#clone" text="Clone" textFill="WHITE" styleClass="btnsecondary"/>
+        <Text fx:id="status" layoutX="173.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="255.7294921875" />
+      <JFXCheckBox fx:id="allBracnhes" checkedColor="TEAL" layoutX="232.0" layoutY="183.0" text="Clone All Bracnhes" textFill="WHITE" unCheckedColor="WHITE" />
 </children>
 </Pane>
