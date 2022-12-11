@@ -31,7 +31,7 @@ public class Home implements Initializable {
             Ygit.Directory = directory;
 
             try{
-
+                explorer.getItems().clear();
                 TreeItem tr = new TreeItem<String>("test");
                 Files.walk(directory).forEach(dir -> explorer.getItems().add(dir.toString()));
                 //explorer.setRoot(tr);
