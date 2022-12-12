@@ -32,6 +32,8 @@ public class Logs implements Initializable {
     @FXML
     private TextArea infos;
     ArrayList<HashMap<String, String>> log = null;
+
+    //controler for the logs section
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
@@ -48,7 +50,7 @@ public class Logs implements Initializable {
                 items.add(new Commit(obj.get("Date"),obj.get("Author"),obj.get("Message")));
             });
         } catch (GitAPIException e) {
-            throw new RuntimeException(e);
+
         }
 
         ObservableList<Commit> list = FXCollections.observableArrayList(items);
@@ -56,7 +58,7 @@ public class Logs implements Initializable {
             loglist.setItems(list);}
         catch (Exception e){
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Please select a directory first");
+            alert.setContentText("Please select a directory first (git project)");
             alert.setTitle("Load Problem");
             alert.showAndWait();
 

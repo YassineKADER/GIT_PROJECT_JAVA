@@ -10,7 +10,9 @@ import javafx.scene.text.Text;
 
 import java.io.File;
 
-public class Branches {
+//controler for the clone section
+
+public class Clone {
     @FXML
     TextField repourl;
     @FXML

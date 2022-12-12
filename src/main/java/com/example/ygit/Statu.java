@@ -25,6 +25,7 @@ public class Statu implements Initializable {
     @FXML
     Button commit;
 
+    //controler for the status section
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

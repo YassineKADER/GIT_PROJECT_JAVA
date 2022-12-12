@@ -33,13 +33,7 @@ public class HelloController implements Initializable {
     @FXML
      private Button status;
 
-
-    public void enableButtons(){
-        branches.setDisable(false);
-        logs.setDisable(false);
-        status.setDisable(false);
-    }
-
+    //this controler is used to transport between section
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
@@ -72,7 +66,7 @@ public class HelloController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Please select a directory first");
+            alert.setContentText("Please select a directory first (git project)");
             alert.setTitle("Load Problem");
             alert.showAndWait();
         }
@@ -89,7 +83,7 @@ public class HelloController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Please select a directory first");
+            alert.setContentText("Please select a directory first (git project)");
             alert.setTitle("Load Problem");
             alert.showAndWait();
 
@@ -102,14 +96,14 @@ public class HelloController implements Initializable {
                 throw new IOException();
             }
             else{
-                Parent fxml = FXMLLoader.load(getClass().getResource("Branches.fxml"));
+                Parent fxml = FXMLLoader.load(getClass().getResource("Clone.fxml"));
                 contentArea.getChildren().removeAll();
                 contentArea.getChildren().setAll(fxml);
             }
 
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Please select a directory first");
+            alert.setContentText("Please select a directory first (git project)");
             alert.setTitle("Load Problem");
             alert.showAndWait();
         }

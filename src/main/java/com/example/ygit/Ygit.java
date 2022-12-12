@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+//the main class that contain all the needed methods
 public class Ygit {
     static public Path Directory;
     private Git git;

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.Branches" stylesheets="style.css">
+<Pane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ygit.Clone" stylesheets="style.css">
 <children>
         <TextField fx:id="repourl" layoutX="63.0" layoutY="115.0" prefHeight="24.0" prefWidth="485.0" />
         <Text fill="WHITE" layoutX="234.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a git link repo:" />

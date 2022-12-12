@@ -1,5 +1,8 @@
 package com.example.ygit;
 
+import java.text.SimpleDateFormat;
+
+//this class used to show the data on the table view in logs section
 public class Commit {
     private String date;
     private String author;
@@ -12,6 +15,7 @@ public class Commit {
     }
 
     public String getDate() {
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         return date;
     }
 
